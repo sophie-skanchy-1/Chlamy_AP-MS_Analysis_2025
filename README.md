@@ -5,29 +5,42 @@ The following instructions can be used to reproduce the data analysis performed 
 
 ## Run contamination flagging on summary sheet of spectral counts
    Parameters:
+   
       contamination_thresh = 4 (min number for a local max to be considered a possible source of contamination)
+      
       decay_thresh = 0.5 (multiplied by previous neighbor from peak to determine max for a point to be flagged – eg must be less than half the previous point, otherwise it’s unlikely all the spectral counts are due to contamination)
+      
       k = 1.4 (exponential decay constant, used to determine how many from local max to flag, with exponential decay curve where initial value is local max spectral counts)
+      
       Exponential decay profile: y = x0 * exp(-kx)
+   
    Note: your flagging results may vary from ours because we had some IP experiments that were not included in the summary sheet provided, so the chronological order of experiments run on the same gel/consecutively on the MS instrument is not totally preserved
 
 ## Run “WD Score Calculator for Phytozome.ipynb” to calculate WD scores
    May need to change input filename in second cell
+   
    After running, manually insert bait info from separate output file into main output (WD_counts1_zscore…)
+      
       Can insert with transpose in Excel
+   
    Note: DO NOT change the p value or z score sheets, only change format for WD score sheet
+   
    Also run for contamination flagged spectral counts sheet
 
 ## Run “Create Flag Matrix.ipynb” to create binary flagging matrix (1 for flagged, 0 for not flagged), using flagged spectral counts sheet as the input
 
 ## Run “Analyze WD and Z Scores, SAINT Scores, Heatmaps, TreeView for Phytozome.ipynb” for dataset stats
    Make localization match thresholding Venn diagrams, WD and Z score threshold profiles, etc
+   
    Export nonzero interactions list
+      
       Have to manually add % localization match column based on % localization match venn diagram
 
 ## Run SAINTexpress:
    Made bait list, prey list (with number of residues for each prey), and interaction list input files
+   
    Run SAINTexpress for spectral counts
+   
    Analyze SAINT scores with “Analyze WD and Z Scores, SAINT Scores, Heatmaps, TreeView for Phytozome.ipynb”
 
 ## Cluster + TreeView 
