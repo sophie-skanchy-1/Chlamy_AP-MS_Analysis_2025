@@ -44,9 +44,9 @@ The following instructions can be used to reproduce the data analysis performed 
    Load the output from this (another .cdt file) in TreeView to view heatmap, can adjust color scheme and intensity scaling as needed
       In TreeView on startup: Help > Plugins > put in path: “/Applications/TreeView-1.2.0-osx/TreeView/plugins” > Scan for plugins > load file output from Cluster
       ~ Note: our files are available in this repository to load directly into TreeView (includes only high-confidence and medium-confidence interactions):
-         "clusterBaitPrey_highConf_correlationCentered_avgLinkage_20240814_loc_match_matrix_negFlag_20240813_loc_match_matrix_20240724_WD_counts1_zscore_20240709_PBv6_BaitPreyInfo.cdt" (must unzip first)
-         "clusterBaitPrey_highConf_correlationCentered_avgLinkage_20240814_loc_match_matrix_negFlag_20240813_loc_match_matrix_20240724_WD_counts1_zscore_20240709_PBv6_BaitPreyInfo.gtr"
-         "clusterBaitPrey_highConf_correlationCentered_avgLinkage_20240814_loc_match_matrix_negFlag_20240813_loc_match_matrix_20240724_WD_counts1_zscore_20240709_PBv6_BaitPreyInfo.atr"
+- "clusterBaitPrey_highConf_correlationCentered_avgLinkage_20240814_loc_match_matrix_negFlag_20240813_loc_match_matrix_20240724_WD_counts1_zscore_20240709_PBv6_BaitPreyInfo.cdt" (must unzip first)
+- "clusterBaitPrey_highConf_correlationCentered_avgLinkage_20240814_loc_match_matrix_negFlag_20240813_loc_match_matrix_20240724_WD_counts1_zscore_20240709_PBv6_BaitPreyInfo.gtr"
+- "clusterBaitPrey_highConf_correlationCentered_avgLinkage_20240814_loc_match_matrix_negFlag_20240813_loc_match_matrix_20240724_WD_counts1_zscore_20240709_PBv6_BaitPreyInfo.atr"
       ~ For these files, clustered on arrays (bait) and genes (prey), using similarity metric "Correlation (centered)" and the "Average Linkage" clustering method, values are the LM% for the interaction (negative values interactions flagged for contamination)
    
    In Excel, delete rows and columns in which no interactions are in high confidence list → zero out any values < 0.7 loc match % → repeat the process with this high-confidence interaction matrix to make a heatmap
