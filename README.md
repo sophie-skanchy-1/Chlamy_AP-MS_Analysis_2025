@@ -17,24 +17,23 @@ The following instructions can be used to reproduce the data analysis performed 
    Note: your flagging results may vary from ours because we had some IP experiments that were not included in the summary sheet provided, so the chronological order of experiments run on the same gel/consecutively on the MS instrument is not totally preserved
 
 ## Run “WD Score Calculator for Phytozome.ipynb” to calculate WD scores
-   May need to change input filename in second cell
+   You may need to change input filename in second cell
    
-   After running, manually insert bait info from separate output file into main output (WD_counts1_zscore…)
-      
-   Can insert with transpose in Excel
+   After running, manually insert bait info from separate output file into main output (WD_counts1_zscore…) (you can insert with transpose in Excel)
    
-   Note: DO NOT change the p value or z score sheets, only change format for WD score sheet
+   Note: DO NOT change the p value or z score sheets, only change the format for the WD score sheet
    
-   Also run for contamination flagged spectral counts sheet
+   Also run this for the contamination flagged spectral counts sheet (change which filename is active at the beginning of the Jupyter notebook)
 
-## Run “Create Flag Matrix.ipynb” to create binary flagging matrix (1 for flagged, 0 for not flagged), using flagged spectral counts sheet as the input
+## Run “Create Flag Matrix.ipynb” to create binary flagging matrix (1 for flagged, 0 for not flagged)
+   Use the flagged spectral counts sheet as the input
 
 ## Run “Analyze WD and Z Scores, SAINT Scores, Heatmaps, TreeView for Phytozome.ipynb” for dataset stats
    Make localization match thresholding Venn diagrams, WD and Z score threshold profiles, etc
    
    Export nonzero interactions list
       
-   Have to manually add % localization match column based on % localization match venn diagram
+   Note: you will have to manually add % localization match column based on % localization match Venn diagram
 
 ## Run SAINTexpress:
    Made bait list, prey list (with number of residues for each prey), and interaction list input files
@@ -50,12 +49,12 @@ The following instructions can be used to reproduce the data analysis performed 
    
    In “Analyze WD and Z Scores, SAINT Scores, Heatmaps, TreeView for Phytozome.ipynb”, go to TreeView section and run section to make localization match % matrix (gives each interaction the loc match % from Venn Diagram sections) with negative values for flagged interactions
    
-   In Excel, make desired annotations to bait and prey CreIDs and put in matrix for Cluster (row 1 = baits + annotations, col 1 = prey + annotations)
+   In Excel, make desired annotations to bait and prey CreIDs and put in the matrix for Cluster (row 1 = baits + annotations, col 1 = prey + annotations)
       
    - Can use =CONCATENATE in Excel
    - Save as tab delimited .txt
    
-   Load this into Cluster 3.0 software (cluster genes aka prey only, with centered correlation metric and average linkage method) and run clustering by clicking on a clustering method
+   Load this into the Cluster 3.0 software (cluster genes aka prey only, with centered correlation metric and average linkage method) and run clustering by clicking on a clustering method
 
    This will output a .cdt file – put this filename into the next section in the Jupyter notebook and run that section to sort baits in same order as clustered prey (create diagonal of self-interactions)
       
@@ -67,7 +66,6 @@ In TreeView on startup: Help > Plugins > put in path: “/Applications/TreeView-
 - "clusterBaitPrey_highConf_correlationCentered_avgLinkage_20240814_loc_match_matrix_negFlag_20240813_loc_match_matrix_20240724_WD_counts1_zscore_20240709_PBv6_BaitPreyInfo.cdt" (must unzip first)
 - "clusterBaitPrey_highConf_correlationCentered_avgLinkage_20240814_loc_match_matrix_negFlag_20240813_loc_match_matrix_20240724_WD_counts1_zscore_20240709_PBv6_BaitPreyInfo.gtr"
 - "clusterBaitPrey_highConf_correlationCentered_avgLinkage_20240814_loc_match_matrix_negFlag_20240813_loc_match_matrix_20240724_WD_counts1_zscore_20240709_PBv6_BaitPreyInfo.atr"
-
 
   ~ For these files, clustered on arrays (bait) and genes (prey), using similarity metric "Correlation (centered)" and the "Average Linkage" clustering method, values are the LM% for the interaction (negative values interactions flagged for contamination)
    
