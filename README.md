@@ -62,7 +62,7 @@ The following instructions can be used to reproduce the data analysis performed 
    - This gives heatmap of all interactions in dataset
    
    Load the output from this (another .cdt file) in TreeView to view heatmap, can adjust color scheme and intensity scaling as needed
-   - In TreeView on startup: Help > Plugins > put in path: “/Applications/TreeView-1.2.0-osx/TreeView/plugins” > Scan for plugins > load file output from Cluster
+In TreeView on startup: Help > Plugins > put in path: “/Applications/TreeView-1.2.0-osx/TreeView/plugins” > Scan for plugins > load file output from Cluster
       ~ Note: our files are available in this repository to load directly into TreeView (includes only high-confidence and medium-confidence interactions):
 - "clusterBaitPrey_highConf_correlationCentered_avgLinkage_20240814_loc_match_matrix_negFlag_20240813_loc_match_matrix_20240724_WD_counts1_zscore_20240709_PBv6_BaitPreyInfo.cdt" (must unzip first)
 - "clusterBaitPrey_highConf_correlationCentered_avgLinkage_20240814_loc_match_matrix_negFlag_20240813_loc_match_matrix_20240724_WD_counts1_zscore_20240709_PBv6_BaitPreyInfo.gtr"
