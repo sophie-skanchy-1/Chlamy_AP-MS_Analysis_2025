@@ -59,4 +59,5 @@ The following instructions can be used to reproduce the data analysis performed 
 ## Comparing Scaffold and MaxQuant
    "output_SAINTexpress_ScaffoldSpecCounts_FDR5.txt" contains output of SAINTexpress for spectral counts from Scaffold
    "output_SAINTexpress_AtlasMaxLFQ_FDR5.txt" contains output of SAINTexpress for intensities from MaxQuant
+   
    Run "Analyze MaxQuant vs Spectral Counts.ipynb"
